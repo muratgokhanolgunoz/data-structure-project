@@ -1,0 +1,52 @@
+﻿<Window x:Class="Muugle.Result"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Muugle"
+        mc:Ignorable="d"
+        Title="Muugle" WindowStartupLocation="CenterScreen" WindowState="Normal" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="muggle_icon" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="200" Height="auto">
+            <Label.Background>
+                <ImageBrush ImageSource="images/muugle.png"/>
+            </Label.Background>
+        </Label>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Border Name="border_searched_text" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Name="label_searched_text" Padding="10" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="3">
+            <Border x:Name="border_result_counter" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+                <Label Name="label_result_counter" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="50,10,50,10"></Label>
+            </Border>
+            <Border Name="border_timer" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+                <Label Name="label_timer" Padding="10" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="150" VerticalContentAlignment="Center"></Label>
+            </Border>
+        </StackPanel>
+
+        <Border BorderBrush="LightGray" BorderThickness="1" Margin="10" Grid.Row="1" Grid.ColumnSpan="4">
+            <ScrollViewer>
+                <StackPanel x:Name="stackpanel_result" Margin="10" Orientation="Vertical"></StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>
